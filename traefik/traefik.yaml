@@ -1,0 +1,20 @@
+## STATIC CONFIGURATION
+api:
+  dashboard: true
+  insecure: true
+
+entryPoints: 
+  web: 
+    address: :80 
+
+providers:
+  consulCatalog:
+    watch: true
+    connectAware: true
+    exposedByDefault: true
+    refreshInterval: 2s
+    prefix: traefik
+    endpoint:
+      scheme: http
+      address: 127.0.0.1:8500
+      datacenter: dc1
